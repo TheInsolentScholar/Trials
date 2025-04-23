@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 12 Trials of Lucy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('/api/placeholder/1200/800');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Cinzel', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f0e1;
+            color: #4a3933;
+        }
+        
+        .container {
+            background-color: rgba(245, 240, 225, 0.85);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: center;
+            border: 8px solid #c8aa6e;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #8d6e63;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .greek-pattern {
+            height: 30px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='20' viewBox='0 0 120 20'%3E%3Cpath d='M0,10 C30,15 30,5 60,10 C90,15 90,5 120,10' fill='none' stroke='%23c8aa6e' stroke-width='2'/%3E%3C/svg%3E");
+            background-repeat: repeat-x;
+            margin: 1rem 0;
+        }
+        
+        .password-form {
+            margin: 2rem 0;
+        }
+        
+        input {
+            padding: 0.8rem;
+            font-family: 'Cinzel', serif;
+            border: 2px solid #c8aa6e;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: 70%;
+            margin-bottom: 1rem;
+            background-color: #f5f0e1;
+        }
+        
+        button {
+            background-color: #c8aa6e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-family: 'Cinzel', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        button:hover {
+            background-color: #b89c60;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .error-message {
+            color: #a94442;
+            margin-top: 1rem;
+            font-style: italic;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>THE 12 TRIALS OF LUCY</h1>
+        <div class="greek-pattern"></div>
+        <p>Enter the sacred password to begin your heroic journey</p>
+        <div class="password-form">
+            <input type="password" id="password" placeholder="Enter the password">
+            <div class="error-message" id="error-message">Incorrect password. Try again.</div>
+            <button onclick="checkPassword()">Enter the Trials</button>
+        </div>
+        <div class="greek-pattern"></div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'trial') {
+                window.location.href = 'introduction.html';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
